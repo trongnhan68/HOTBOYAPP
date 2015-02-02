@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		697A7DCF1A7F117100CBE57C /* Co Hang Xom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 697A7DCC1A7F117100CBE57C /* Co Hang Xom.mp3 */; };
+		697A7DD01A7F117100CBE57C /* Khong Phai Dang Vua Dau.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 697A7DCD1A7F117100CBE57C /* Khong Phai Dang Vua Dau.mp3 */; };
+		697A7DD31A7F172200CBE57C /* image in Resources */ = {isa = PBXBuildFile; fileRef = 697A7DD21A7F172200CBE57C /* image */; };
+		697A7DD61A7F181500CBE57C /* cellSongDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 697A7DD51A7F181500CBE57C /* cellSongDetail.m */; };
+		697A7DD91A7F1A4600CBE57C /* SongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 697A7DD81A7F1A4600CBE57C /* SongModel.m */; };
+		697A7DDB1A7F49CB00CBE57C /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 697A7DDA1A7F49CB00CBE57C /* search.png */; };
+		697A7DDD1A7F49EF00CBE57C /* nhansinger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 697A7DDC1A7F49EF00CBE57C /* nhansinger.jpg */; };
 		69AA637D1A7E78B40018F56D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA637C1A7E78B40018F56D /* main.m */; };
 		69AA63801A7E78B40018F56D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA637F1A7E78B40018F56D /* AppDelegate.m */; };
 		69AA63831A7E78B40018F56D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA63821A7E78B40018F56D /* ViewController.m */; };
 		69AA63881A7E78B40018F56D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63871A7E78B40018F56D /* Images.xcassets */; };
 		69AA638B1A7E78B40018F56D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63891A7E78B40018F56D /* LaunchScreen.xib */; };
 		69AA63971A7E78B40018F56D /* Nhan_MP3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA63961A7E78B40018F56D /* Nhan_MP3Tests.m */; };
-		69AA63A71A7E7D030018F56D /* khong phai vua dau.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63A51A7E7D030018F56D /* khong phai vua dau.mp3 */; };
-		69AA63A81A7E7D030018F56D /* loi dinh menh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63A61A7E7D030018F56D /* loi dinh menh.mp3 */; };
 		69AA63AA1A7E7F490018F56D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AA63A91A7E7F490018F56D /* AVFoundation.framework */; };
 		69AA63AC1A7E83320018F56D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63AB1A7E83320018F56D /* Entitlements.plist */; };
 		69AA63E51A7E93B10018F56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63E31A7E93B10018F56D /* Main.storyboard */; };
+		69C01C3F1A7F583500F2F5B4 /* Khong Phai Dang Vua Dau copy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69C01C3D1A7F583500F2F5B4 /* Khong Phai Dang Vua Dau copy.mp3 */; };
+		69C01C401A7F583500F2F5B4 /* Loi Dinh Menh copy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69C01C3E1A7F583500F2F5B4 /* Loi Dinh Menh copy.mp3 */; };
+		69C01C431A7F5A6400F2F5B4 /* ControllerDownloadMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		697A7DCC1A7F117100CBE57C /* Co Hang Xom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Co Hang Xom.mp3"; sourceTree = SOURCE_ROOT; };
+		697A7DCD1A7F117100CBE57C /* Khong Phai Dang Vua Dau.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Khong Phai Dang Vua Dau.mp3"; sourceTree = SOURCE_ROOT; };
+		697A7DD21A7F172200CBE57C /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = SOURCE_ROOT; };
+		697A7DD41A7F181500CBE57C /* cellSongDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellSongDetail.h; sourceTree = "<group>"; };
+		697A7DD51A7F181500CBE57C /* cellSongDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellSongDetail.m; sourceTree = "<group>"; };
+		697A7DD71A7F1A4600CBE57C /* SongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongModel.h; sourceTree = "<group>"; };
+		697A7DD81A7F1A4600CBE57C /* SongModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongModel.m; sourceTree = "<group>"; };
+		697A7DDA1A7F49CB00CBE57C /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../image/search.png; sourceTree = "<group>"; };
+		697A7DDC1A7F49EF00CBE57C /* nhansinger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nhansinger.jpg; path = ../image/nhansinger.jpg; sourceTree = "<group>"; };
 		69AA63771A7E78B40018F56D /* Nhan MP3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nhan MP3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AA637B1A7E78B40018F56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AA637C1A7E78B40018F56D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,11 +60,13 @@
 		69AA63901A7E78B40018F56D /* Nhan MP3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nhan MP3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AA63951A7E78B40018F56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AA63961A7E78B40018F56D /* Nhan_MP3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Nhan_MP3Tests.m; sourceTree = "<group>"; };
-		69AA63A51A7E7D030018F56D /* khong phai vua dau.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "khong phai vua dau.mp3"; sourceTree = SOURCE_ROOT; };
-		69AA63A61A7E7D030018F56D /* loi dinh menh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "loi dinh menh.mp3"; sourceTree = SOURCE_ROOT; };
 		69AA63A91A7E7F490018F56D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		69AA63AB1A7E83320018F56D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		69AA63E41A7E93B10018F56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69C01C3D1A7F583500F2F5B4 /* Khong Phai Dang Vua Dau copy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Khong Phai Dang Vua Dau copy.mp3"; sourceTree = SOURCE_ROOT; };
+		69C01C3E1A7F583500F2F5B4 /* Loi Dinh Menh copy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Loi Dinh Menh copy.mp3"; sourceTree = SOURCE_ROOT; };
+		69C01C411A7F5A6400F2F5B4 /* ControllerDownloadMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerDownloadMusic.h; sourceTree = "<group>"; };
+		69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerDownloadMusic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +111,9 @@
 		69AA63791A7E78B40018F56D /* Nhan MP3 */ = {
 			isa = PBXGroup;
 			children = (
+				697A7DDA1A7F49CB00CBE57C /* search.png */,
+				697A7DDC1A7F49EF00CBE57C /* nhansinger.jpg */,
+				697A7DD21A7F172200CBE57C /* image */,
 				69AA63A01A7E7CCC0018F56D /* Resource */,
 				69AA637E1A7E78B40018F56D /* AppDelegate.h */,
 				69AA637F1A7E78B40018F56D /* AppDelegate.m */,
@@ -101,6 +123,12 @@
 				69AA63871A7E78B40018F56D /* Images.xcassets */,
 				69AA63891A7E78B40018F56D /* LaunchScreen.xib */,
 				69AA637A1A7E78B40018F56D /* Supporting Files */,
+				697A7DD51A7F181500CBE57C /* cellSongDetail.m */,
+				697A7DD41A7F181500CBE57C /* cellSongDetail.h */,
+				697A7DD71A7F1A4600CBE57C /* SongModel.h */,
+				697A7DD81A7F1A4600CBE57C /* SongModel.m */,
+				69C01C411A7F5A6400F2F5B4 /* ControllerDownloadMusic.h */,
+				69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */,
 			);
 			path = "Nhan MP3";
 			sourceTree = "<group>";
@@ -134,8 +162,10 @@
 		69AA63A01A7E7CCC0018F56D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				69AA63A51A7E7D030018F56D /* khong phai vua dau.mp3 */,
-				69AA63A61A7E7D030018F56D /* loi dinh menh.mp3 */,
+				69C01C3D1A7F583500F2F5B4 /* Khong Phai Dang Vua Dau copy.mp3 */,
+				69C01C3E1A7F583500F2F5B4 /* Loi Dinh Menh copy.mp3 */,
+				697A7DCC1A7F117100CBE57C /* Co Hang Xom.mp3 */,
+				697A7DCD1A7F117100CBE57C /* Khong Phai Dang Vua Dau.mp3 */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -220,12 +250,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				697A7DD31A7F172200CBE57C /* image in Resources */,
+				697A7DDB1A7F49CB00CBE57C /* search.png in Resources */,
 				69AA63E51A7E93B10018F56D /* Main.storyboard in Resources */,
+				697A7DCF1A7F117100CBE57C /* Co Hang Xom.mp3 in Resources */,
+				69C01C401A7F583500F2F5B4 /* Loi Dinh Menh copy.mp3 in Resources */,
+				697A7DD01A7F117100CBE57C /* Khong Phai Dang Vua Dau.mp3 in Resources */,
 				69AA63AC1A7E83320018F56D /* Entitlements.plist in Resources */,
-				69AA63A81A7E7D030018F56D /* loi dinh menh.mp3 in Resources */,
+				69C01C3F1A7F583500F2F5B4 /* Khong Phai Dang Vua Dau copy.mp3 in Resources */,
 				69AA638B1A7E78B40018F56D /* LaunchScreen.xib in Resources */,
+				697A7DDD1A7F49EF00CBE57C /* nhansinger.jpg in Resources */,
 				69AA63881A7E78B40018F56D /* Images.xcassets in Resources */,
-				69AA63A71A7E7D030018F56D /* khong phai vua dau.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69AA63831A7E78B40018F56D /* ViewController.m in Sources */,
+				697A7DD61A7F181500CBE57C /* cellSongDetail.m in Sources */,
 				69AA63801A7E78B40018F56D /* AppDelegate.m in Sources */,
 				69AA637D1A7E78B40018F56D /* main.m in Sources */,
+				697A7DD91A7F1A4600CBE57C /* SongModel.m in Sources */,
+				69C01C431A7F5A6400F2F5B4 /* ControllerDownloadMusic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,9 +342,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -347,9 +383,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -440,6 +474,7 @@
 				69AA639C1A7E78B40018F56D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69AA639D1A7E78B40018F56D /* Build configuration list for PBXNativeTarget "Nhan MP3Tests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +483,7 @@
 				69AA639F1A7E78B40018F56D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

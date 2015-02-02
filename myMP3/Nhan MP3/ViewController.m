@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVAudioPlayer.h>
+#import "cellSongDetail.h"
 @interface ViewController ()
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL isPlaying;
@@ -18,30 +19,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.SongDetails=[NSMutableArray array] ;
     self.audioPlayer.delegate=self;
     self.isPlaying = NO;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"loi dinh menh" ofType:@"mp3"];
-   // NSData *myData = [NSData dataWithContentsOfFile:filePath];
-    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
-    
-    //Initialize the AVAudioPlayer.
-       if (fileURL) {
-        // do something useful
-        NSLog(@"LOAD OK");
-        NSError *error = nil;
-           self.audioPlayer = [[AVAudioPlayer alloc]
-                               initWithContentsOfURL:fileURL error:nil];
+    [self dumpDataForSong];
 
-       // self.audioPlayer = [[AVAudioPlayer alloc] initWithData:myData error:&error];
-        [self.audioPlayer prepareToPlay];
-    }
-    else
-    {
-            NSLog(@"LOAD fail");
-    }
-    // Do any additional setup after loading the view, typically from a nib.
+
+   
 }
-
+-(NSString *)getFileNameFromURL:(NSURL *)url
+{
+    NSString *filename = [[url path] lastPathComponent];
+    NSArray *parts = [filename componentsSeparatedByString:@"."];
+    filename = [parts objectAtIndex:[parts count]-2];
+    NSLog(filename );
+    return filename;
+}
+-(void) dumpDataForSong
+{
+   
+    NSURL *bundleRoot = [[NSBundle mainBundle] bundleURL];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray * dirContents =
+    [fm contentsOfDirectoryAtURL:bundleRoot
+      includingPropertiesForKeys:@[]
+                         options:NSDirectoryEnumerationSkipsHiddenFiles
+                           error:nil];
+    NSPredicate * fltr = [NSPredicate predicateWithFormat:@"pathExtension='mp3'"];
+    NSMutableArray * onlyMP3s = [dirContents filteredArrayUsingPredicate:fltr];
+    
+    for (int i=0;i<onlyMP3s.count;i++)
+    {
+        NSURL *tmpURL=[onlyMP3s objectAtIndex:i];
+        SongModel *songModel=
+        [SongModel initWithSong:
+         @{
+           @"songName":[self getFileNameFromURL:tmpURL],
+           @"iconImage":@"nhansinger.jpg",
+           }
+         ];
+        [self.SongDetails addObject:songModel];
+    }
+   }
 - (IBAction)FunPlay{
 
     if (self.isPlaying)
@@ -76,4 +95,49 @@
     self.audioPlayer.currentTime = 0;
     self.isPlaying = NO;
 }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.SongDetails.count;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"click");
+    SongModel *song=[self.SongDetails objectAtIndex:indexPath.row];
+    
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:[song songName] ofType:@"mp3"];
+            NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
+            if (fileURL) {
+                // do something useful
+                NSLog(@"LOAD OK");
+                self.audioPlayer = [[AVAudioPlayer alloc]
+                                    initWithContentsOfURL:fileURL error:nil];
+    
+                [self.audioPlayer prepareToPlay];
+            }
+            else
+            {
+                NSLog(@"LOAD fail");
+            }
+    [self.audioPlayer play];
+
+    return YES;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"cellSongDetailID";
+    SongModel *song;
+    cellSongDetail *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        song = [self.SongDetails objectAtIndex:indexPath.row];
+ 
+    [cell setupCellWithSongDetail:song];
+    return cell;
+}
+
 @end

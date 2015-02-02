@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "SongModel.h"
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelPlaytime;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
-
+@property (nonatomic,strong) NSMutableArray *SongDetails;
 - (IBAction)FunPlay;
 - (IBAction)FunStop;
+-(NSString *) getFileNameFromURL:(NSURL *)url;
 
 @end
 
