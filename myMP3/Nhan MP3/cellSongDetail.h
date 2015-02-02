@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class SongModel;
 @interface cellSongDetail : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imvIcconSong;
+@property (weak, nonatomic) IBOutlet UIImageView *imvIconSong;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelSongName;
 -(void)setupCellWithSongDetail:(SongModel *)songDetail;

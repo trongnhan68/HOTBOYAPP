@@ -12,10 +12,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPlaytime;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UIButton *btnStop;
+@property (weak, nonatomic) IBOutlet UIButton *btnRefresh;
 @property (nonatomic,strong) NSMutableArray *SongDetails;
+@property (nonatomic,strong)  NSNumber *checkValue;
 - (IBAction)FunPlay;
 - (IBAction)FunStop;
+@property (weak, nonatomic) IBOutlet UITableView *tableviewItem;
+
 -(NSString *) getFileNameFromURL:(NSURL *)url;
+-(IBAction)reloadFile;
 
 @end
 

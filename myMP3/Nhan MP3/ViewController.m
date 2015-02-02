@@ -22,10 +22,17 @@
     self.SongDetails=[NSMutableArray array] ;
     self.audioPlayer.delegate=self;
     self.isPlaying = NO;
-    [self dumpDataForSong];
+ //   [self dumpDataForSong];
 
-
+ [self dumpData2];
    
+}
+-(IBAction)reloadFile
+{
+  //  [self dumpDataForSong];
+    
+    [self dumpData2];
+    [self.tableviewItem reloadData ];
 }
 -(NSString *)getFileNameFromURL:(NSURL *)url
 {
@@ -56,11 +63,29 @@
          @{
            @"songName":[self getFileNameFromURL:tmpURL],
            @"iconImage":@"nhansinger.jpg",
+           @"filePath":[tmpURL path],
            }
          ];
-        [self.SongDetails addObject:songModel];
-    }
+     //  if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
+        NSNumber *check=@(1);
+        if (self.SongDetails.count!=0)
+   {
+        for (SongModel *item in self.SongDetails )
+        {
+            if ([item.songName isEqual:songModel.songName])
+            {
+                check=0;
+                break;
+            }
+            else
+                check=@1;
+       
+        }
+    if ([check intValue]==1)   [self.SongDetails addObject:songModel];
    }
+        else [self.SongDetails addObject:songModel];
+    }
+     }
 - (IBAction)FunPlay{
 
     if (self.isPlaying)
@@ -78,6 +103,53 @@
         self.isPlaying = YES;
         NSLog(@"playing");
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+    }
+}
+-(void) dumpData2
+{
+    NSString *doccumentPath= [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSURL *bundleRoot;
+    NSFileManager *fm;
+    bundleRoot= [NSURL URLWithString:doccumentPath];
+    
+    fm = [NSFileManager defaultManager];
+    NSArray * dirContents =
+    [fm contentsOfDirectoryAtURL:bundleRoot
+      includingPropertiesForKeys:@[]
+                         options:NSDirectoryEnumerationSkipsHiddenFiles
+                           error:nil];
+    NSPredicate * fltr = [NSPredicate predicateWithFormat:@"pathExtension='mp3'"];
+    NSMutableArray * onlyMP3s = [dirContents filteredArrayUsingPredicate:fltr];
+    
+    for (int i=0;i<onlyMP3s.count;i++)
+    {
+        NSURL *tmpURL=[onlyMP3s objectAtIndex:i];
+        SongModel *songModel=
+        [SongModel initWithSong:
+         @{
+           @"songName":[self getFileNameFromURL:tmpURL],
+           @"iconImage":@"nhansinger.jpg",
+            @"filePath":[tmpURL path],
+           }
+         ];
+    //   if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
+        self.checkValue=@(1);
+        if (self.SongDetails.count!=0)
+        {
+            for (SongModel *item in self.SongDetails )
+            {
+                if ([item.songName isEqual:songModel.songName])
+                {
+                      self.checkValue=@(0);
+                    break;
+                }
+                else
+                      self.checkValue=@(1);
+                
+            }
+            if ([  self.checkValue intValue]==1)   [self.SongDetails addObject:songModel];
+        }
+        else [self.SongDetails addObject:songModel];
     }
 }
 - (void)updateTime
@@ -111,24 +183,25 @@
     NSLog(@"click");
     SongModel *song=[self.SongDetails objectAtIndex:indexPath.row];
     
-            NSString *filePath = [[NSBundle mainBundle] pathForResource:[song songName] ofType:@"mp3"];
+    NSString *filePath =[song filePath];
             NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
             if (fileURL) {
                 // do something useful
                 NSLog(@"LOAD OK");
                 self.audioPlayer = [[AVAudioPlayer alloc]
                                     initWithContentsOfURL:fileURL error:nil];
-    
-                [self.audioPlayer prepareToPlay];
+          [self.audioPlayer play];
+            //    [self.audioPlayer prepareToPlay];
             }
             else
             {
                 NSLog(@"LOAD fail");
             }
-    [self.audioPlayer play];
+    
 
     return YES;
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellSongDetailID";

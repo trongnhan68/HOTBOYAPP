@@ -23,8 +23,9 @@
 {
     //self.imvIcconSong.image=[[UIImage *image]];
     self.labelSongName.text=songDetail.songName;
+    
 //    UIImage *img=[UIImage imageNamed:songDetail.iconImage];
 //    self.imvIcconSong.image =img;
-    // [self.imvIcconSong setImage:[UIImage imageNamed:songDetail.iconImage]];
+     [self.imvIconSong setImage:[UIImage imageNamed:songDetail.iconImage]];
 }
 @end

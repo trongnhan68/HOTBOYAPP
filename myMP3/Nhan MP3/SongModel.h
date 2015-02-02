@@ -11,6 +11,7 @@
 @interface SongModel : NSObject
 @property (nonatomic,weak) NSString *songName;
 @property (nonatomic,weak) NSString *iconImage;
+@property (nonatomic,strong) NSString * filePath;
 -(instancetype)init:(NSDictionary *) dictionary;
 +(instancetype)initWithSong:(NSDictionary *)dictionary;
 @end

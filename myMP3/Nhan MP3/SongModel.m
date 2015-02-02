@@ -15,7 +15,7 @@
    {
        self.iconImage=dictionary[@"iconImage"];
        self.songName=dictionary[@"songName"];
-   
+       self.filePath=dictionary[@"filePath"];
    }
         return self;
 }
