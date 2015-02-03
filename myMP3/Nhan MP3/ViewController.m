@@ -22,14 +22,14 @@
     self.SongDetails=[NSMutableArray array] ;
     self.audioPlayer.delegate=self;
     self.isPlaying = NO;
- //   [self dumpDataForSong];
-
- [self dumpData2];
-   
+    //   [self dumpDataForSong];:
+      self.labelPlaytime.text = @"00:00";
+    [self dumpData2];
+    
 }
 -(IBAction)reloadFile
 {
-  //  [self dumpDataForSong];
+    //  [self dumpDataForSong];
     
     [self dumpData2];
     [self.tableviewItem reloadData ];
@@ -44,7 +44,7 @@
 }
 -(void) dumpDataForSong
 {
-   
+    
     NSURL *bundleRoot = [[NSBundle mainBundle] bundleURL];
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray * dirContents =
@@ -66,43 +66,46 @@
            @"filePath":[tmpURL path],
            }
          ];
-     //  if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
+        //  if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
         NSNumber *check=@(1);
         if (self.SongDetails.count!=0)
-   {
-        for (SongModel *item in self.SongDetails )
         {
-            if ([item.songName isEqual:songModel.songName])
+            for (SongModel *item in self.SongDetails )
             {
-                check=0;
-                break;
+                if ([item.songName isEqual:songModel.songName])
+                {
+                    check=0;
+                    break;
+                }
+                else
+                    check=@1;
+                
             }
-            else
-                check=@1;
-       
+            if ([check intValue]==1)   [self.SongDetails addObject:songModel];
         }
-    if ([check intValue]==1)   [self.SongDetails addObject:songModel];
-   }
         else [self.SongDetails addObject:songModel];
     }
-     }
+}
 - (IBAction)FunPlay{
-
+    
     if (self.isPlaying)
     {
         // Music is currently playing
         [self.audioPlayer pause];
         self.isPlaying = NO;
-                NSLog(@"pasue");
+        NSLog(@"pasue");
+           [self.btnPlay setTitle:@"Paused" forState:nil];
     }
     else
     {
         // Music is currenty paused/stopped
-     //   self.audioPlayer.currentTime = 0;
+        //   self.audioPlayer.currentTime = 0;
+           [self.btnPlay setTitle:@"Playing" forState:nil];
         [self.audioPlayer play];
         self.isPlaying = YES;
         NSLog(@"playing");
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+        
     }
 }
 -(void) dumpData2
@@ -129,10 +132,10 @@
          @{
            @"songName":[self getFileNameFromURL:tmpURL],
            @"iconImage":@"nhansinger.jpg",
-            @"filePath":[tmpURL path],
+           @"filePath":[tmpURL path],
            }
          ];
-    //   if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
+        //   if (![self.SongDetails containsObject: songModel]) [self.SongDetails addObject:songModel];
         self.checkValue=@(1);
         if (self.SongDetails.count!=0)
         {
@@ -140,11 +143,11 @@
             {
                 if ([item.songName isEqual:songModel.songName])
                 {
-                      self.checkValue=@(0);
+                    self.checkValue=@(0);
                     break;
                 }
                 else
-                      self.checkValue=@(1);
+                    self.checkValue=@(1);
                 
             }
             if ([  self.checkValue intValue]==1)   [self.SongDetails addObject:songModel];
@@ -184,21 +187,35 @@
     SongModel *song=[self.SongDetails objectAtIndex:indexPath.row];
     
     NSString *filePath =[song filePath];
-            NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
-            if (fileURL) {
-                // do something useful
-                NSLog(@"LOAD OK");
-                self.audioPlayer = [[AVAudioPlayer alloc]
-                                    initWithContentsOfURL:fileURL error:nil];
-          [self.audioPlayer play];
+    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];
+    if (fileURL) {
+        // do something useful
+        if (!self.isPlaying)
+        {
+            NSLog(@"LOAD OK");
+            self.audioPlayer = [[AVAudioPlayer alloc]
+                                initWithContentsOfURL:fileURL error:nil];
+          
+            [self.audioPlayer play];
             //    [self.audioPlayer prepareToPlay];
-            }
-            else
-            {
-                NSLog(@"LOAD fail");
-            }
+            self.isPlaying = YES;
+            NSLog(@"playing");
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
+            [self.btnPlay setTitle:@"Playing" forState:nil];
+        }
+        else
+        {
+            self.isPlaying = NO;
+            [self.audioPlayer pause];
+            [self.btnPlay setTitle:@"Paused" forState:nil];
+        }
+    }
+    else
+    {
+        NSLog(@"LOAD fail");
+    }
     
-
+    
     return YES;
 }
 
@@ -207,8 +224,8 @@
     static NSString *cellIdentifier = @"cellSongDetailID";
     SongModel *song;
     cellSongDetail *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-        song = [self.SongDetails objectAtIndex:indexPath.row];
- 
+    song = [self.SongDetails objectAtIndex:indexPath.row];
+    
     [cell setupCellWithSongDetail:song];
     return cell;
 }

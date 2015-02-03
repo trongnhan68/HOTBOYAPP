@@ -15,13 +15,13 @@
 		69AA637D1A7E78B40018F56D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA637C1A7E78B40018F56D /* main.m */; };
 		69AA63801A7E78B40018F56D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA637F1A7E78B40018F56D /* AppDelegate.m */; };
 		69AA63831A7E78B40018F56D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA63821A7E78B40018F56D /* ViewController.m */; };
-		69AA63881A7E78B40018F56D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63871A7E78B40018F56D /* Images.xcassets */; };
 		69AA638B1A7E78B40018F56D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63891A7E78B40018F56D /* LaunchScreen.xib */; };
 		69AA63971A7E78B40018F56D /* Nhan_MP3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AA63961A7E78B40018F56D /* Nhan_MP3Tests.m */; };
 		69AA63AA1A7E7F490018F56D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69AA63A91A7E7F490018F56D /* AVFoundation.framework */; };
 		69AA63AC1A7E83320018F56D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63AB1A7E83320018F56D /* Entitlements.plist */; };
 		69AA63E51A7E93B10018F56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AA63E31A7E93B10018F56D /* Main.storyboard */; };
 		69C01C431A7F5A6400F2F5B4 /* ControllerDownloadMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */; };
+		69C01C4C1A80607500F2F5B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C01C4B1A80607500F2F5B4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 		69AA637F1A7E78B40018F56D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		69AA63811A7E78B40018F56D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		69AA63821A7E78B40018F56D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		69AA63871A7E78B40018F56D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69AA638A1A7E78B40018F56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		69AA63901A7E78B40018F56D /* Nhan MP3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nhan MP3Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AA63951A7E78B40018F56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		69AA63E41A7E93B10018F56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69C01C411A7F5A6400F2F5B4 /* ControllerDownloadMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerDownloadMusic.h; sourceTree = "<group>"; };
 		69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerDownloadMusic.m; sourceTree = "<group>"; };
+		69C01C4B1A80607500F2F5B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,6 @@
 				69AA63811A7E78B40018F56D /* ViewController.h */,
 				69AA63821A7E78B40018F56D /* ViewController.m */,
 				69AA63E31A7E93B10018F56D /* Main.storyboard */,
-				69AA63871A7E78B40018F56D /* Images.xcassets */,
 				69AA63891A7E78B40018F56D /* LaunchScreen.xib */,
 				69AA637A1A7E78B40018F56D /* Supporting Files */,
 				697A7DD51A7F181500CBE57C /* cellSongDetail.m */,
@@ -121,6 +120,7 @@
 				697A7DD81A7F1A4600CBE57C /* SongModel.m */,
 				69C01C411A7F5A6400F2F5B4 /* ControllerDownloadMusic.h */,
 				69C01C421A7F5A6400F2F5B4 /* ControllerDownloadMusic.m */,
+				69C01C4B1A80607500F2F5B4 /* Images.xcassets */,
 			);
 			path = "Nhan MP3";
 			sourceTree = "<group>";
@@ -207,6 +207,11 @@
 				TargetAttributes = {
 					69AA63761A7E78B30018F56D = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					69AA638F1A7E78B40018F56D = {
 						CreatedOnToolsVersion = 6.1;
@@ -240,11 +245,11 @@
 			files = (
 				697A7DD31A7F172200CBE57C /* image in Resources */,
 				697A7DDB1A7F49CB00CBE57C /* search.png in Resources */,
+				69C01C4C1A80607500F2F5B4 /* Images.xcassets in Resources */,
 				69AA63E51A7E93B10018F56D /* Main.storyboard in Resources */,
 				69AA63AC1A7E83320018F56D /* Entitlements.plist in Resources */,
 				69AA638B1A7E78B40018F56D /* LaunchScreen.xib in Resources */,
 				697A7DDD1A7F49EF00CBE57C /* nhansinger.jpg in Resources */,
-				69AA63881A7E78B40018F56D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +333,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -370,8 +375,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "-";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -393,6 +398,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "-";
 				INFOPLIST_FILE = "Nhan MP3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +410,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "-";
 				INFOPLIST_FILE = "Nhan MP3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
